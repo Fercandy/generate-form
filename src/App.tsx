@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import Config from './ConfigComp/Config';
+import { Tabs } from 'antd';
+import 'antd/dist/antd.css';
+import './index.css';
+import Result from './ResultComp/Result';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const { TabPane } = Tabs;
+
+const App: FC = () => {
+	return (
+		<Tabs type='card'>
+			<TabPane tab='Config' key='1'>
+				<Config />
+			</TabPane>
+			<TabPane tab='Result' key='2'>
+				<Result />
+			</TabPane>
+		</Tabs>
+	);
+};
 
 export default App;
